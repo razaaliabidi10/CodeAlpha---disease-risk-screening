@@ -1,0 +1,13 @@
+dataset,model,accuracy,recall,precision,roc_auc
+heart,SVM,0.869,0.929,0.812,0.952
+heart,Logistic Regression,0.869,0.929,0.812,0.965
+heart,Random Forest,0.885,0.929,0.839,0.947
+heart,XGBoost,0.885,0.893,0.862,0.948
+diabetes,SVM,0.708,0.537,0.592,0.819
+diabetes,Logistic Regression,0.727,0.685,0.597,0.816
+diabetes,Random Forest,0.747,0.759,0.612,0.825
+diabetes,XGBoost,0.773,0.833,0.634,0.816
+cancer,SVM,0.982,0.952,1.0,0.997
+cancer,Logistic Regression,0.974,0.952,0.976,0.995
+cancer,Random Forest,0.965,0.905,1.0,0.997
+cancer,XGBoost,0.974,0.929,1.0,0.991

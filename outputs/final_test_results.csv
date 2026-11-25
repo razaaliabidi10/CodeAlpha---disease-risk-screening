@@ -1,0 +1,7 @@
+dataset,cutoff,threshold,roc_auc,recall,precision,f1,caught_TP,missed_FN,false_alarms_FP,correct_healthy_TN
+heart,0.5,0.5,0.965,0.929,0.812,0.867,26,2,6,27
+heart,chosen,0.288,0.965,0.964,0.73,0.831,27,1,10,23
+diabetes,0.5,0.5,0.816,0.685,0.597,0.638,37,17,25,75
+diabetes,chosen,0.359,0.816,0.889,0.565,0.691,48,6,37,63
+cancer,0.5,0.5,0.995,0.952,0.976,0.964,40,2,1,71
+cancer,chosen,0.436,0.995,0.952,0.976,0.964,40,2,1,71
