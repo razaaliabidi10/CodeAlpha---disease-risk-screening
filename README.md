@@ -1,5 +1,11 @@
 # Disease Risk Screening
 
+
+
+https://github.com/user-attachments/assets/88aa957e-006f-4d15-a415-918b4a8a5a82
+
+
+
 A small app that flags possible heart disease, diabetes and breast cancer from patient data. I built it during my internship at [CodeAlpha/Machine Learning].
 
 **Try it:** (https://codealpha---disease-risk-screening-hhwtqcazh7qn7f5fx69asy.streamlit.app/) (if it's asleep, click "wake up" and give it a minute)
