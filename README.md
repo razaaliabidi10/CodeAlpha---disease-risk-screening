@@ -2,7 +2,7 @@
 
 A small app that flags possible heart disease, diabetes and breast cancer from patient data. I built it during my internship at [CodeAlpha/Machine Learning].
 
-**Try it:** YOUR-LINK (if it's asleep, click "wake up" and give it a minute)
+**Try it:** (https://codealpha---disease-risk-screening-hhwtqcazh7qn7f5fx69asy.streamlit.app/) (if it's asleep, click "wake up" and give it a minute)
 
 ## Why I built it
 My task was to predict diseases from medical data using SVM, Logistic Regression, Random Forest and XGBoost. I wanted the result to be something you can actually click around in, not just a notebook with numbers.
