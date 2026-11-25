@@ -31,7 +31,7 @@ My task was to predict diseases from medical data using SVM, Logistic Regression
 Heart's cross-validated AUC was about 0.90, so 0.965 is probably a lucky small test set. On cancer I aimed for higher recall and missed 2 tumors.
 
 ## Tech stack
-- **Python** on Google Colab (GPU wasn't needed)
+- **Python** on Google Colab (GPU Tesla 4)
 - **pandas, NumPy** for data
 - **scikit-learn** for pipelines, SVM, Logistic Regression, Random Forest, cross-validation and tuning
 - **XGBoost** for gradient boosting
