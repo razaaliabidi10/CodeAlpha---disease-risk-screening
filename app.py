@@ -1,4 +1,4 @@
- # Streamlit app: disease risk screening (v4, text inputs)
+  # Streamlit app: disease risk screening (v4, text inputs)
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -130,18 +130,22 @@ def reset(name):
         del st.session_state[k]
 
 
+def fill(name, vals):
+    for f, v in vals.items():
+        if not np.isnan(v):
+            st.session_state[wkey(name, f)] = int(v) if spec(name, f)[0] == 'cat' else f'{v:g}'
+
+
 def load_patient(name):
     reset(name)
     X_te, y_te = SPLITS[name][1], SPLITS[name][3]
     i = np.random.randint(len(X_te))
-    row, vals = X_te.iloc[i], {}
-    for f in BUNDLE[name]['features']:
-        v = row[f]
-        vals[f] = np.nan if pd.isna(v) else float(v)
-        if not pd.isna(v):
-            st.session_state[wkey(name, f)] = int(v) if spec(name, f)[0] == 'cat' else f'{v:g}'
+    row = X_te.iloc[i]
+    vals = {f: (np.nan if pd.isna(row[f]) else float(row[f])) for f in BUNDLE[name]['features']}
+    fill(name, vals)
     given = [f for f, v in vals.items() if not np.isnan(v)]
     st.session_state[f'{name}_result'] = {'values': vals, 'given': given, 'truth': int(y_te.iloc[i])}
+
 
 
 def field(name, f, col):
@@ -186,6 +190,9 @@ name = st.radio('Condition', list(NAMES), format_func=NAMES.get, horizontal=True
 feats = BUNDLE[name]['features']
 tuned_t = BUNDLE[name]['threshold']
 t = st.session_state.get(f'thr_{name}', round(tuned_t, 2))
+_r = st.session_state.get(f'{name}_result')
+if _r and not any(wkey(name, f) in st.session_state for f in feats):
+    fill(name, _r['values'])
 st.markdown(f'## {NAMES[name]} prediction')
 st.caption(POP[name])
 tab1, tab2, tab3 = st.tabs(['Prediction', 'Model comparison', 'About'])
